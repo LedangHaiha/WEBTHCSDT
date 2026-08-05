@@ -1,0 +1,16 @@
+# Node dependencies
+node_modules/
+backend/node_modules/
+package-lock.json
+
+# Local env & data
+.env
+.env.local
+backend/database/data.json
+
+# System & OS files
+.DS_Store
+Thumbs.db
+
+# Agent logs
+.gemini/

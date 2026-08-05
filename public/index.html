@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cổng thông tin Điện tử Phòng Giáo dục và Đào tạo - THCS Đồng</title>
+  <meta name="description" content="Cổng thông tin điện tử chính thức tin tức, sự kiện, văn bản chỉ đạo và thủ tục hành chính ngành Giáo dục và Đào tạo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- 1. TOP SUB-HEADER BAR -->
+  <!-- ============================================================ -->
+  <div class="top-header">
+    <div class="container top-header-inner">
+      <div class="sub-links">
+        <a href="#">Cơ quan sở GD&ĐT</a> <span class="sep">/</span>
+        <a href="#">Phòng GD&ĐT</a> <span class="sep">/</span>
+        <a href="#">THPT</a> <span class="sep">/</span>
+        <a href="#" class="active">THCS</a> <span class="sep">/</span>
+        <a href="#">Tiểu học</a>
+      </div>
+      <div class="top-right-actions">
+        <button id="cmsToggleBtn" class="btn-cms-toggle" onclick="toggleCmsModal()">
+          🔑 CMS Quản Trị Nhà Trường
+        </button>
+        <span class="auth-links" id="authLinks">
+          <a href="#" onclick="openLoginModal()">Đăng nhập</a> / <a href="#">Đăng ký</a>
+        </span>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="handleSearchKey(event)">
+          <button type="button" onclick="performSearch()" title="Tìm kiếm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 2. MAIN HEADER BANNER -->
+  <!-- ============================================================ -->
+  <header class="main-banner">
+    <div class="banner-overlay"></div>
+    <div class="container banner-content">
+      <div class="logo-area">
+        <div class="emblem-circle">
+          <div class="emblem-ring"></div>
+          <svg class="emblem-icon" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="45" stroke="#ffffff" stroke-width="3" fill="#0d47a1"/>
+            <path d="M50 20 L65 55 L35 55 Z" fill="#ffca28"/>
+            <path d="M50 35 L50 75" stroke="#ffffff" stroke-width="4"/>
+            <path d="M30 75 Q50 60 70 75" stroke="#ffffff" stroke-width="3" fill="none"/>
+          </svg>
+        </div>
+        <div class="title-group">
+          <h2 class="sub-agency">Phòng giáo dục và đào tạo</h2>
+          <h1 class="main-heading">Thành phố Hà Nội - THCS Đồng</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- 3. NAVIGATION MENU BAR -->
+  <!-- ============================================================ -->
+  <nav class="main-navbar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="#" class="nav-item">TRANG NHẤT</a></li>
+        <li><a href="#" class="nav-item">GIỚI THIỆU CHUNG</a></li>
+        <li><a href="#" class="nav-item active">TIN TỨC - SỰ KIỆN</a></li>
+        <li><a href="#" class="nav-item">QUẢN LÝ ĐIỀU HÀNH</a></li>
+        <li><a href="#" class="nav-item">DỊCH VỤ CÔNG</a></li>
+        <li><a href="#" class="nav-item">THƯ VIỆN</a></li>
+        <li><a href="#" class="nav-item">HỎI ĐÁP - LIÊN HỆ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- 4. MAIN CONTENT AREA (3 COLUMNS LAYOUT) -->
+  <!-- ============================================================ -->
+  <main class="main-body container">
+    <div class="portal-grid">
+      
+      <!-- CỘT 1: DANH MỤC TIỆN ÍCH SIDEBAR -->
+      <aside class="col-left">
+        <div class="widget-box sidebar-categories">
+          <div class="widget-header header-blue">
+            <span class="header-icon">⭕</span>
+            <h3>DANH MỤC</h3>
+          </div>
+          <ul class="cat-list" id="utilityList">
+            <li><a href="mailto:phonggddt@hanoi.gov.vn"><span class="icon">✉️</span> Email phòng GD&ĐT</a></li>
+            <li><a href="#lich-cong-tac"><span class="icon">📅</span> Lịch công tác</a></li>
+            <li><a href="#tai-nguyen-cong-nghe"><span class="icon">🌐</span> Tài nguyên công nghệ</a></li>
+            <li><a href="#csdl-thpt"><span class="icon">📗</span> Cơ sở dữ liệu THPT</a></li>
+            <li><a href="#cong-bo-vbhc"><span class="icon">📹</span> Công bố trực tuyến VBHC</a></li>
+            <li><a href="#thu-tuc-hanh-chinh"><span class="icon">📑</span> Thủ tục hành chính</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- CỘT 2: BÀI VIẾT NỔI BẬT & TIN TỨC CHÍNH -->
+      <section class="col-center">
+        <!-- Hero Article -->
+        <article class="featured-hero-article" id="featuredArticle">
+          <div class="hero-image-wrapper">
+            <img id="heroImage" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80" alt="Sở Giáo dục và Đào tạo tập huấn">
+            <div class="hero-title-overlay">
+              <h2 id="heroTitle">Sở Giáo dục và Đào tạo tổ chức tập huấn chuyên môn đầu năm học</h2>
+            </div>
+          </div>
+          <div class="hero-excerpt-box">
+            <p id="heroExcerpt">
+              Thực hiện nhiệm vụ GDTrH năm học 2025-2026, Sở Giáo dục và Đào tạo (GDĐT) Quảng Nam tổ chức Hội nghị tập huấn chuyên môn đầu năm học 2025-2026 nhằm mục tiêu trang bị cho đội ngũ chuyên viên, giáo viên...
+            </p>
+          </div>
+        </article>
+
+        <!-- Banner Khuyến học phụ -->
+        <div class="sub-banner-card">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="Khuyến học">
+          <div class="quote-text">“ Vì tương lai thế hệ trẻ ”</div>
+        </div>
+
+        <!-- Lưới tin tức phụ -->
+        <div class="news-sub-list" id="subNewsList">
+          <!-- Render từ API Javascript -->
+        </div>
+      </section>
+
+      <!-- CỘT 3: KHỐI THÔNG BÁO MỐC THỜI GIAN -->
+      <aside class="col-right">
+        <div class="widget-box widget-announcement">
+          <div class="widget-header header-announcement">
+            <div class="yellow-stripes"></div>
+            <h3>THÔNG BÁO</h3>
+          </div>
+          <div class="announcement-list" id="announcementList">
+            <!-- Items render từ Javascript API -->
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- 5. FOOTER THCS PHONG THẠNH TÂY / ĐỒNG -->
+  <!-- ============================================================ -->
+  <footer class="main-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Cổng thông tin Điện tử THCS Đồng - Phòng GD&ĐT Thành phố Hà Nội.</p>
+      <p>Địa chỉ: Đường Giáo Dục, Thành phố Hà Nội | Điện thoại: (024) 38.123.456 | Email: thcsdong@hanoi.edu.vn</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- MODAL 1: ĐĂNG NHẬP HỆ THỐNG CMS -->
+  <!-- ============================================================ -->
+  <div class="modal-backdrop" id="loginModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>ĐĂNG NHẬP CMS QUẢN TRỊ NỘI DUNG</h3>
+        <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+      </div>
+      <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label>Tên đăng nhập (Username):</label>
+          <input type="text" id="loginUsername" value="admin" required>
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu (Password):</label>
+          <input type="password" id="loginPassword" value="admin123" required>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Đăng nhập ngay</button>
+        </div>
+        <p class="login-hint">* Tài khoản thử nghiệm: <b>admin / admin123</b> (Ban Giám Hiệu)</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MODAL 2: GIAO DIỆN CMS QUẢN TRỊ (BGH & GIÁO VIÊN) -->
+  <!-- ============================================================ -->
+  <div class="modal-backdrop modal-cms" id="cmsModal">
+    <div class="modal-box cms-container">
+      <div class="modal-header cms-header">
+        <div class="cms-title">
+          <h2>🏛️ CMS QUẢN TRỊ NHÀ TRƯỜNG & BIÊN TẬP BÀI VIẾT</h2>
+          <span id="userBadge" class="user-badge">BGH Admin</span>
+        </div>
+        <button class="modal-close" onclick="toggleCmsModal()">&times;</button>
+      </div>
+      <div class="cms-body">
+        
+        <!-- CMS Tabs Navigation -->
+        <div class="cms-tabs">
+          <button class="tab-btn active" onclick="switchCmsTab('postsTab')">📝 Quản lý Bài Viết</button>
+          <button class="tab-btn" onclick="switchCmsTab('annTab')">🔔 Đăng Thông Báo Mốc Lịch</button>
+          <button class="tab-btn" onclick="switchCmsTab('docTab')">📑 Công bố Văn Bản HC</button>
+          <button class="tab-btn" onclick="switchCmsTab('auditTab')">📜 Nhật Ký Xuất Bản (Audit Logs)</button>
+        </div>
+
+        <!-- TAB 1: BÀI VIẾT -->
+        <div class="tab-content active" id="postsTab">
+          <h3>Đăng Bài Viết Mới lên Cổng Thông Tin</h3>
+          <form id="createPostForm" onsubmit="handleCreatePost(event)">
+            <div class="form-group">
+              <label>Tiêu đề bài viết (*):</label>
+              <input type="text" id="postTitle" required placeholder="Nhập tiêu đề tin tức sự kiện...">
+            </div>
+            <div class="form-group">
+              <label>Trích dẫn ngắn (Excerpt):</label>
+              <textarea id="postExcerpt" rows="2" placeholder="Tóm tắt nội dung chính hiển thị ngoài trang chủ..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Nội dung chi tiết bài viết (*):</label>
+              <textarea id="postContent" rows="4" required placeholder="Viết nội dung bài viết tin tức..."></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label>Ảnh đại diện (Thumbnail URL):</label>
+                <input type="text" id="postThumbnail" placeholder="https://..." value="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80">
+              </div>
+              <div class="form-group flex-checkbox">
+                <label><input type="checkbox" id="postFeatured"> Bài viết Nổi bật Hero trang chủ</label>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary">🚀 Đăng xuất bản lên Trang Nhất</button>
+          </form>
+        </div>
+
+        <!-- TAB 2: THÔNG BÁO MỐC LỊCH -->
+        <div class="tab-content" id="annTab">
+          <h3>Tạo Thông Báo Ngày Tháng (Badge Calendar)</h3>
+          <form onsubmit="handleCreateAnnouncement(event)">
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label>Tháng (Mẫu: Th.11, Th.12):</label>
+                <input type="text" id="annMonth" required value="Th.11">
+              </div>
+              <div class="form-group flex-1">
+                <label>Ngày (Mẫu: 19, 20):</label>
+                <input type="text" id="annDay" required value="20">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Tiêu đề thông báo (*):</label>
+              <input type="text" id="annTitle" required placeholder="Nhập tiêu đề thông báo hoạt động...">
+            </div>
+            <button type="submit" class="btn-primary">🔔 Xuất bản Thông báo</button>
+          </form>
+        </div>
+
+        <!-- TAB 3: VĂN BẢN HÀNH CHÍNH -->
+        <div class="tab-content" id="docTab">
+          <h3>Công Bố Trực Tuyến Văn Bản Chỉ Đạo</h3>
+          <form onsubmit="handleCreateDoc(event)">
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label>Số hiệu văn bản (*):</label>
+                <input type="text" id="docNumber" required placeholder="Mẫu: 125/HD-SGDĐT">
+              </div>
+              <div class="form-group flex-1">
+                <label>Thể loại:</label>
+                <input type="text" id="docCategory" value="Hướng dẫn">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Trích yếu văn bản (*):</label>
+              <input type="text" id="docTitle" required placeholder="Tên nội dung văn bản chỉ đạo...">
+            </div>
+            <button type="submit" class="btn-primary">📑 Công bố Văn bản</button>
+          </form>
+        </div>
+
+        <!-- TAB 4: AUDIT LOGS -->
+        <div class="tab-content" id="auditTab">
+          <h3>Nhật Ký Hệ Thống & Vết Xuất Bản (Audit Logs)</h3>
+          <div class="table-responsive">
+            <table class="audit-table">
+              <thead>
+                <tr>
+                  <th>#ID</th>
+                  <th>Người thực hiện</th>
+                  <th>Hành động</th>
+                  <th>Loại đối tượng</th>
+                  <th>Chi tiết</th>
+                  <th>Thời gian</th>
+                </tr>
+              </thead>
+              <tbody id="auditLogsBody">
+                <!-- Javascript render -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
