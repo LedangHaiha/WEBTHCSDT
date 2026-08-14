@@ -57,19 +57,32 @@ Specialist AI personas for different domains.
 
 ---
 
-## 🧩 Skills (36)
+## 🧩 Skills (49)
 
 Modular knowledge domains that agents can load on-demand. based on task context.
 
-### Frontend & UI
+### Frontend & UI & Taste Skill Suite
 
-| Skill                   | Description                                                           |
-| ----------------------- | --------------------------------------------------------------------- |
-| `react-best-practices`  | React & Next.js performance optimization (Vercel - 57 rules)          |
-| `web-design-guidelines` | Web UI audit - 100+ rules for accessibility, UX, performance (Vercel) |
-| `tailwind-patterns`     | Tailwind CSS v4 utilities                                             |
-| `frontend-design`       | UI/UX patterns, design systems                                        |
-| `ui-ux-pro-max`         | 50 styles, 21 palettes, 50 fonts                                      |
+| Skill                      | Description                                                           |
+| -------------------------- | --------------------------------------------------------------------- |
+| `react-best-practices`     | React & Next.js performance optimization (Vercel - 57 rules)          |
+| `web-design-guidelines`    | Web UI audit - 100+ rules for accessibility, UX, performance (Vercel) |
+| `tailwind-patterns`        | Tailwind CSS v4 utilities                                             |
+| `frontend-design`          | UI/UX patterns, design systems                                        |
+| `ui-ux-pro-max`            | 50 styles, 21 palettes, 50 fonts                                      |
+| `taste-skill`              | World-class design taste, aesthetic judgment, and UI craftsmanship    |
+| `taste-skill-v1`           | Core taste skill guidelines v1                                        |
+| `brandkit`                 | Visual identity, brand design system & guidelines                     |
+| `brutalist-skill`          | Neobrutalism & Brutalist UI design principles                         |
+| `minimalist-skill`         | Clean, minimal, high-aesthetic UI patterns                            |
+| `soft-skill`               | Soft UI, glassmorphism & gentle aesthetics                            |
+| `stitch-skill`             | Component stitching & seamless UI integration                         |
+| `redesign-skill`           | UI/UX redesign & modernization methodologies                          |
+| `image-to-code-skill`      | Converting visual designs & mockups directly to pixel-perfect code    |
+| `imagegen-frontend-web`    | Web image generation & visual assets integration                      |
+| `imagegen-frontend-mobile` | Mobile image generation & visual assets integration                   |
+| `gpt-tasteskill`           | GPT-tailored taste prompting & visual refinement                      |
+| `output-skill`             | High-fidelity output formatting & visual presentation                 |
 
 ### Backend & API
 
