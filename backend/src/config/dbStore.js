@@ -1,4 +1,4 @@
-// Mock / In-Memory DB Store với Persistence để Backend API chạy lập tức không cần cài MySQL
+// Mock / In-Memory DB Store với Persistence cho Backend API
 const fs = require('fs');
 const path = require('path');
 
@@ -6,9 +6,24 @@ const DB_FILE = path.join(__dirname, '../../database/data.json');
 
 const defaultData = {
   users: [
-    { id: 1, username: 'admin', password_hash: 'admin123', full_name: 'Ban Giám Hiệu Admin', role: 'ADMIN', email: 'admin@thcsdong.edu.vn' },
-    { id: 2, username: 'giaovien', password_hash: 'gv123', full_name: 'Nguyễn Văn A (Giáo viên)', role: 'TEACHER', email: 'nguyenvana@thcsdong.edu.vn' }
+    { id: 1, username: 'admin', password_hash: 'admin123', full_name: 'Ban Giám Hiệu Admin', role: 'ADMIN', email: 'admin@thcsdongtan.huulung.langson.edu.vn', status: 'APPROVED' },
+    { id: 2, username: 'giaovien', password_hash: 'gv123', full_name: 'Nguyễn Văn A (Giáo viên)', role: 'TEACHER', email: 'nguyenvana@thcsdongtan.edu.vn', status: 'APPROVED' },
+    { id: 3, username: 'giaovien2', password_hash: '123456', full_name: 'Trần Thị B (Giáo viên Đăng ký)', role: 'TEACHER', email: 'tranthib@thcsdongtan.edu.vn', status: 'PENDING_APPROVAL' }
   ],
+  site_settings: {
+    agency_title: 'ỦY BAN NHÂN DÂN XÃ HỮU LŨNG - TỈNH LẠNG SƠN',
+    school_name: 'TRƯỜNG THCS ĐỒNG TÂN',
+    address: 'Xã Hữu Lũng - Tỉnh Lạng Sơn',
+    phone: '(0205) 3885.6789',
+    email: 'thcsdongtan.huulung@langson.edu.vn',
+    quick_links: [
+      { id: 1, title: 'Giới thiệu nhà trường', url: '#gioi-thieu' },
+      { id: 2, title: 'Tin tức - Sự kiện nổi bật', url: '#tin-tuc' },
+      { id: 3, title: 'Văn bản chỉ đạo & Quy chế', url: '#van-ban' },
+      { id: 4, title: 'Kho Tài nguyên & Đề thi', url: '#tai-nguyen' },
+      { id: 5, title: 'Lịch công tác tuần', url: '#lich-cong-tac' }
+    ]
+  },
   utilities: [
     { id: 1, title: 'Email phòng GD&ĐT', icon_type: 'email', target_url: 'mailto:phonggddt@hanoi.gov.vn', order_index: 1 },
     { id: 2, title: 'Lịch công tác', icon_type: 'calendar', target_url: '#lich-cong-tac', order_index: 2 },
@@ -25,10 +40,10 @@ const defaultData = {
   posts: [
     {
       id: 1,
-      title: 'Sở Giáo dục và Đào tạo tổ chức tập huấn chuyên môn đầu năm học',
-      slug: 'so-gd-dt-to-chuc-tap-huan-chuyen-mon-dau-nam-hoc',
-      excerpt: 'Thực hiện nhiệm vụ GDTrH năm học 2025-2026, Sở Giáo dục và Đào tạo (GDĐT) Quảng Nam tổ chức Hội nghị tập huấn chuyên môn đầu năm học 2025-2026 nhằm mục tiêu trang bị cho đội ngũ chuyên viên, giáo viên...',
-      content: 'Chi tiết bài viết: Ngày 18/1, Sở Giáo dục và Đào tạo đã khai mạc lớp tập huấn chuyên môn dành cho cán bộ quản lý và giáo viên cốt cán các trường THCS trên địa bàn thành phố.',
+      title: 'Lễ kết nạp Đảng viên mới cho cán bộ giáo viên THCS Đồng Tân',
+      slug: 'le-ket-nap-dang-vien-moi-cho-can-bo-giao-vien',
+      excerpt: 'Vào lúc 14 giờ 00, Chi bộ trường THCS Đồng Tân đã long trọng tổ chức Lễ kết nạp Đảng viên cho giáo viên ưu tú có nhiều thành tích xuất sắc.',
+      content: 'Nội dung chi tiết buổi lễ kết nạp Đảng viên mới...',
       thumbnail: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80',
       is_featured: 1,
       status: 'PUBLISHED',
@@ -37,10 +52,10 @@ const defaultData = {
     },
     {
       id: 2,
-      title: 'Học sinh THCS xuất sắc đạt giải cao tại Kỳ thi Khoa học Kỹ thuật cấp Thành phố',
-      slug: 'hoc-sinh-thcs-xuat-sac-dat-giai-cao-kty-khoa-hoc-ky-thuat',
-      excerpt: 'Dự án "Đổi mới phương pháp tự học với AI" của nhóm học sinh trường THCS Đồng đã vinh dự đạt giải Nhất hội thi sáng tạo KHKT cấp thành phố năm 2026.',
-      content: 'Nội dung chi tiết kết quả cuộc thi KHKT...',
+      title: 'Bộ GD&ĐT ban hành Chỉ thị về nhiệm vụ trọng tâm năm học 2026 - 2027',
+      slug: 'bo-gd-dt-ban-hanh-chi-thi-nhiem-vu-trong-tam',
+      excerpt: 'Tập trung nâng cao chất lượng giáo dục toàn diện, đẩy mạnh chuyển đổi số trong công tác quản lý và giảng dạy tại các trường phổ thông.',
+      content: 'Nội dung chi tiết chỉ thị năm học 2026-2027...',
       thumbnail: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80',
       is_featured: 0,
       status: 'PUBLISHED',
@@ -49,11 +64,11 @@ const defaultData = {
     }
   ],
   documents: [
-    { id: 1, doc_number: '124/HD-SGDĐT', title: 'Hướng dẫn thực hiện nhiệm vụ ứng dụng CNTT năm học 2025-2026', category: 'Hướng dẫn', published_date: '2026-09-01' },
-    { id: 2, doc_number: '89/TB-THCSD', title: 'Thông báo về việc nghỉ lễ và treo cờ quốc kỳ', category: 'Thông báo', published_date: '2026-08-30' }
+    { id: 1, doc_number: '232/2026/NĐ-CP', title: 'Nghị định quy định về vị trí việc làm của viên chức', category: 'Nghị định', published_date: '2026-06-26' },
+    { id: 2, doc_number: '124/HD-SGDĐT', title: 'Hướng dẫn thực hiện nhiệm vụ ứng dụng CNTT năm học 2025-2026', category: 'Hướng dẫn', published_date: '2026-09-01' }
   ],
   audit_logs: [
-    { id: 1, user_name: 'Ban Giám Hiệu Admin', action: 'CREATE_POST', entity_type: 'POST', entity_id: 1, details: 'Đã xuất bản bài viết tập huấn chuyên môn', created_at: new Date().toISOString() }
+    { id: 1, user_name: 'Ban Giám Hiệu Admin', action: 'CREATE_POST', entity_type: 'POST', entity_id: 1, details: 'Đã xuất bản bài viết kết nạp Đảng viên', created_at: new Date().toISOString() }
   ]
 };
 
@@ -61,7 +76,10 @@ function loadData() {
   try {
     if (fs.existsSync(DB_FILE)) {
       const raw = fs.readFileSync(DB_FILE, 'utf8');
-      return JSON.parse(raw);
+      const loaded = JSON.parse(raw);
+      // Ensure site_settings exists
+      if (!loaded.site_settings) loaded.site_settings = defaultData.site_settings;
+      return loaded;
     }
   } catch (err) {
     console.error('Lỗi đọc database file, khởi tạo dữ liệu mặc định:', err.message);
@@ -76,7 +94,7 @@ function saveData(data) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
-    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
+    fs.writeFileSync(DB_FILE, JSON.stringify(data || db, null, 2), 'utf8');
   } catch (err) {
     console.error('Lỗi ghi database file:', err.message);
   }

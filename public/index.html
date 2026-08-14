@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cổng thông tin Điện tử Phòng Giáo dục và Đào tạo - THCS Đồng</title>
-  <meta name="description" content="Cổng thông tin điện tử chính thức tin tức, sự kiện, văn bản chỉ đạo và thủ tục hành chính ngành Giáo dục và Đào tạo.">
+  <title>Cổng thông tin Điện tử - TRƯỜNG THCS ĐỒNG TÂN</title>
+  <meta name="description" content="Cổng thông tin điện tử chính thức tin tức, sự kiện, văn bản chỉ đạo và thủ tục hành chính TRƯỜNG THCS ĐỒNG TÂN - Xã Hữu Lũng - Tỉnh Lạng Sơn.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -26,10 +26,10 @@
       </div>
       <div class="top-right-actions">
         <button id="cmsToggleBtn" class="btn-cms-toggle" onclick="toggleCmsModal()">
-          🔑 CMS Quản Trị Nhà Trường
+          🛡️ Hệ thống Quản trị Portal
         </button>
         <span class="auth-links" id="authLinks">
-          <a href="#" onclick="openLoginModal()">Đăng nhập</a> / <a href="#">Đăng ký</a>
+          <a href="#" onclick="openLoginModal()">Đăng nhập</a> / <a href="#" onclick="openRegisterModal()">Đăng ký</a>
         </span>
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="Tìm kiếm..." onkeyup="handleSearchKey(event)">
@@ -58,8 +58,8 @@
           </svg>
         </div>
         <div class="title-group">
-          <h2 class="sub-agency">Phòng giáo dục và đào tạo</h2>
-          <h1 class="main-heading">Thành phố Hà Nội - THCS Đồng</h1>
+          <h2 class="sub-agency" id="headerAgencyTitle">ỦY BAN NHÂN DÂN XÃ HỮU LŨNG - TỈNH LẠNG SƠN</h2>
+          <h1 class="main-heading" id="headerSchoolName">TRƯỜNG THCS ĐỒNG TÂN</h1>
         </div>
       </div>
     </div>
@@ -111,14 +111,14 @@
         <!-- Hero Article -->
         <article class="featured-hero-article" id="featuredArticle">
           <div class="hero-image-wrapper">
-            <img id="heroImage" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80" alt="Sở Giáo dục và Đào tạo tập huấn">
+            <img id="heroImage" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80" alt="Lễ kết nạp Đảng viên">
             <div class="hero-title-overlay">
-              <h2 id="heroTitle">Sở Giáo dục và Đào tạo tổ chức tập huấn chuyên môn đầu năm học</h2>
+              <h2 id="heroTitle">Lễ kết nạp Đảng viên mới cho cán bộ giáo viên THCS Đồng Tân</h2>
             </div>
           </div>
           <div class="hero-excerpt-box">
             <p id="heroExcerpt">
-              Thực hiện nhiệm vụ GDTrH năm học 2025-2026, Sở Giáo dục và Đào tạo (GDĐT) Quảng Nam tổ chức Hội nghị tập huấn chuyên môn đầu năm học 2025-2026 nhằm mục tiêu trang bị cho đội ngũ chuyên viên, giáo viên...
+              Vào lúc 14 giờ 00, Chi bộ trường THCS Đồng Tân đã long trọng tổ chức Lễ kết nạp Đảng viên cho giáo viên ưu tú có nhiều thành tích xuất sắc trong công tác giảng dạy...
             </p>
           </div>
         </article>
@@ -152,49 +152,137 @@
   </main>
 
   <!-- ============================================================ -->
-  <!-- 5. FOOTER THCS PHONG THẠNH TÂY / ĐỒNG -->
+  <!-- 5. FOOTER TRANG BÌA KHỐI CHỦ QUẢN & LIÊN KẾT NHANH (ẢNH 2) -->
   <!-- ============================================================ -->
   <footer class="main-footer">
-    <div class="container footer-inner">
-      <p>© 2026 Cổng thông tin Điện tử THCS Đồng - Phòng GD&ĐT Thành phố Hà Nội.</p>
-      <p>Địa chỉ: Đường Giáo Dục, Thành phố Hà Nội | Điện thoại: (024) 38.123.456 | Email: thcsdong@hanoi.edu.vn</p>
+    <div class="container footer-grid-container">
+      
+      <!-- Khối CƠ QUAN CHỦ QUẢN -->
+      <div class="footer-col footer-info">
+        <h4 class="footer-heading">CƠ QUAN CHỦ QUẢN</h4>
+        <p class="agency-name" id="footerAgencyTitle">ỦY BAN NHÂN DÂN XÃ HỮU LŨNG - TỈNH LẠNG SƠN</p>
+        <p class="school-name" id="footerSchoolName">TRƯỜNG THCS ĐỒNG TÂN</p>
+        <p><span class="icon">📍</span> <b>Địa chỉ:</b> <span id="footerAddress">Xã Hữu Lũng - Tỉnh Lạng Sơn</span></p>
+        <p><span class="icon">📞</span> <b>Điện thoại:</b> <span id="footerPhone">(0205) 3885.6789</span></p>
+        <p><span class="icon">✉️</span> <b>Email:</b> <span id="footerEmail">thcsdongtan.huulung@langson.edu.vn</span></p>
+      </div>
+
+      <!-- Khối LIÊN KẾT NHANH -->
+      <div class="footer-col footer-links">
+        <h4 class="footer-heading">LIÊN KẾT NHANH</h4>
+        <ul id="footerQuickLinks" class="quick-links-list">
+          <li><a href="#gioi-thieu">Giới thiệu nhà trường</a></li>
+          <li><a href="#tin-tuc">Tin tức - Sự kiện nổi bật</a></li>
+          <li><a href="#van-ban">Văn bản chỉ đạo & Quy chế</a></li>
+          <li><a href="#tai-nguyen">Kho Tài nguyên & Đề thi</a></li>
+          <li><a href="#lich-cong-tac">Lịch công tác tuần</a></li>
+        </ul>
+      </div>
+
+      <!-- Khối THỐNG KÊ TRUY CẬP -->
+      <div class="footer-col footer-stats">
+        <h4 class="footer-heading">THỐNG KÊ TRUY CẬP</h4>
+        <ul class="stats-list">
+          <li><span class="dot green"></span> Đang trực tuyến: <b>48</b></li>
+          <li><span class="dot yellow"></span> Lượt truy cập hôm nay: <b>1,250</b></li>
+          <li><span class="dot blue"></span> Tổng số lượt truy cập: <b>850,420</b></li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <div class="footer-bottom-copyright">
+      <div class="container">
+        Bản quyền © 2026 TRƯỜNG THCS ĐỒNG TÂN - Xã Hữu Lũng, Tỉnh Lạng Sơn. Tất cả quyền được bảo lưu.
+      </div>
     </div>
   </footer>
 
   <!-- ============================================================ -->
-  <!-- MODAL 1: ĐĂNG NHẬP HỆ THỐNG CMS -->
+  <!-- MODAL 1: ĐĂNG NHẬP HỆ THỐNG CMS (CÓ HIỂN THỊ MẬT KHẨU) -->
   <!-- ============================================================ -->
   <div class="modal-backdrop" id="loginModal">
     <div class="modal-box">
       <div class="modal-header">
-        <h3>ĐĂNG NHẬP CMS QUẢN TRỊ NỘI DUNG</h3>
+        <div class="shield-title">
+          <div class="shield-icon">🛡️</div>
+          <h3>ĐĂNG NHẬP HỆ THỐNG QUẢN TRỊ</h3>
+          <p class="sub-desc">Dành cho Ban Giám Hiệu & Cán bộ Quản trị Portal</p>
+        </div>
         <button class="modal-close" onclick="closeLoginModal()">&times;</button>
       </div>
       <form id="loginForm" onsubmit="handleLoginSubmit(event)">
         <div class="form-group">
-          <label>Tên đăng nhập (Username):</label>
-          <input type="text" id="loginUsername" value="admin" required>
+          <label>Tên tài khoản (BGH/Giáo viên):</label>
+          <input type="text" id="loginUsername" value="admin" required placeholder="Nhập tên tài khoản...">
         </div>
-        <div class="form-group">
-          <label>Mật khẩu (Password):</label>
-          <input type="password" id="loginPassword" value="admin123" required>
+        <div class="form-group password-group">
+          <label>Mật khẩu:</label>
+          <div class="password-wrapper">
+            <input type="password" id="loginPassword" value="admin123" required placeholder="Nhập mật khẩu...">
+            <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility('loginPassword', this)" title="Hiển thị mật khẩu">
+              👁️
+            </button>
+          </div>
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn-submit">Đăng nhập ngay</button>
+          <button type="submit" class="btn-submit btn-login-blue">Đăng Nhập Quản Trị</button>
         </div>
-        <p class="login-hint">* Tài khoản thử nghiệm: <b>admin / admin123</b> (Ban Giám Hiệu)</p>
+        <div class="modal-foot-links">
+          Chưa có tài khoản? <a href="#" onclick="switchModal('loginModal', 'registerModal')">Đăng ký tài khoản mới</a>
+        </div>
       </form>
     </div>
   </div>
 
   <!-- ============================================================ -->
-  <!-- MODAL 2: GIAO DIỆN CMS QUẢN TRỊ (BGH & GIÁO VIÊN) -->
+  <!-- MODAL 2: ĐĂNG KÝ TÀI KHOẢN (GỬI ADMIN DUYỆT) -->
+  <!-- ============================================================ -->
+  <div class="modal-backdrop" id="registerModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>ĐĂNG KÝ TÀI KHOẢN THÀNH VIÊN</h3>
+        <button class="modal-close" onclick="closeRegisterModal()">&times;</button>
+      </div>
+      <form id="registerForm" onsubmit="handleRegisterSubmit(event)">
+        <div class="form-group">
+          <label>Họ và tên (*):</label>
+          <input type="text" id="regFullName" required placeholder="Nhập họ tên giáo viên / cán bộ...">
+        </div>
+        <div class="form-group">
+          <label>Tên đăng nhập (Username) (*):</label>
+          <input type="text" id="regUsername" required placeholder="Ví dụ: nguyenvana">
+        </div>
+        <div class="form-group">
+          <label>Email liên hệ:</label>
+          <input type="email" id="regEmail" placeholder="abc@thcsdongtan.edu.vn">
+        </div>
+        <div class="form-group password-group">
+          <label>Mật khẩu (*):</label>
+          <div class="password-wrapper">
+            <input type="password" id="regPassword" required placeholder="Nhập mật khẩu...">
+            <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility('regPassword', this)">👁️</button>
+          </div>
+        </div>
+        <p class="reg-notice">⚠️ <i>Lưu ý: Sau khi đăng ký, yêu cầu sẽ được chuyển tới Ban Giám Hiệu / Admin để phê duyệt cấp phép trước khi bạn có thể đăng nhập.</i></p>
+        <div class="form-actions" style="margin-top:14px;">
+          <button type="submit" class="btn-submit">🚀 Gửi Yêu Cầu Đăng Ký</button>
+        </div>
+        <div class="modal-foot-links">
+          Đã có tài khoản? <a href="#" onclick="switchModal('registerModal', 'loginModal')">Quay lại Đăng nhập</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MODAL 3: GIAO DIỆN CMS QUẢN TRỊ (CÓ DUYỆT TÀI KHOẢN & SỬA TRANG BÌA) -->
   <!-- ============================================================ -->
   <div class="modal-backdrop modal-cms" id="cmsModal">
     <div class="modal-box cms-container">
       <div class="modal-header cms-header">
         <div class="cms-title">
-          <h2>🏛️ CMS QUẢN TRỊ NHÀ TRƯỜNG & BIÊN TẬP BÀI VIẾT</h2>
+          <h2>🏛️ HỆ THỐNG QUẢN TRỊ PORTAL & NỘI DUNG</h2>
           <span id="userBadge" class="user-badge">BGH Admin</span>
         </div>
         <button class="modal-close" onclick="toggleCmsModal()">&times;</button>
@@ -203,27 +291,30 @@
         
         <!-- CMS Tabs Navigation -->
         <div class="cms-tabs">
-          <button class="tab-btn active" onclick="switchCmsTab('postsTab')">📝 Quản lý Bài Viết</button>
-          <button class="tab-btn" onclick="switchCmsTab('annTab')">🔔 Đăng Thông Báo Mốc Lịch</button>
-          <button class="tab-btn" onclick="switchCmsTab('docTab')">📑 Công bố Văn Bản HC</button>
-          <button class="tab-btn" onclick="switchCmsTab('auditTab')">📜 Nhật Ký Xuất Bản (Audit Logs)</button>
+          <button class="tab-btn active" onclick="switchCmsTab('postsTab')">📝 Bài Viết Tin Tức</button>
+          <button class="tab-btn" onclick="switchCmsTab('annTab')">🔔 Mốc Lịch Thông Báo</button>
+          <button class="tab-btn" onclick="switchCmsTab('docTab')">📑 Công Bố VBHC</button>
+          <button class="tab-btn admin-only-tab" onclick="switchCmsTab('pendingUsersTab')">👥 Duyệt Đăng Ký Tài Khoản (<span id="pendingCount">0</span>)</button>
+          <button class="tab-btn admin-only-tab" onclick="switchCmsTab('coverSettingsTab')">⚙️ Cấu Hình Trang Bìa & Liên Kết Nhanh</button>
+          <button class="tab-btn" onclick="switchCmsTab('changePasswordTab')">🔑 Đổi Mật Khẩu</button>
+          <button class="tab-btn" onclick="switchCmsTab('auditTab')">📜 Audit Logs</button>
         </div>
 
-        <!-- TAB 1: BÀI VIẾT -->
+        <!-- TAB 1: BÀI VIẾT TIN TỨC -->
         <div class="tab-content active" id="postsTab">
           <h3>Đăng Bài Viết Mới lên Cổng Thông Tin</h3>
           <form id="createPostForm" onsubmit="handleCreatePost(event)">
             <div class="form-group">
               <label>Tiêu đề bài viết (*):</label>
-              <input type="text" id="postTitle" required placeholder="Nhập tiêu đề tin tức sự kiện...">
+              <input type="text" id="postTitle" required placeholder="Nhập tiêu đề tin tức...">
             </div>
             <div class="form-group">
               <label>Trích dẫn ngắn (Excerpt):</label>
-              <textarea id="postExcerpt" rows="2" placeholder="Tóm tắt nội dung chính hiển thị ngoài trang chủ..."></textarea>
+              <textarea id="postExcerpt" rows="2" placeholder="Tóm tắt nội dung chính..."></textarea>
             </div>
             <div class="form-group">
               <label>Nội dung chi tiết bài viết (*):</label>
-              <textarea id="postContent" rows="4" required placeholder="Viết nội dung bài viết tin tức..."></textarea>
+              <textarea id="postContent" rows="4" required placeholder="Viết nội dung bài viết..."></textarea>
             </div>
             <div class="form-row">
               <div class="form-group flex-1">
@@ -234,29 +325,29 @@
                 <label><input type="checkbox" id="postFeatured"> Bài viết Nổi bật Hero trang chủ</label>
               </div>
             </div>
-            <button type="submit" class="btn-primary">🚀 Đăng xuất bản lên Trang Nhất</button>
+            <button type="submit" class="btn-primary">🚀 Xuất Bản Bài Viết</button>
           </form>
         </div>
 
         <!-- TAB 2: THÔNG BÁO MỐC LỊCH -->
         <div class="tab-content" id="annTab">
-          <h3>Tạo Thông Báo Ngày Tháng (Badge Calendar)</h3>
+          <h3>Tạo Thông Báo Mốc Lịch (Badge Calendar)</h3>
           <form onsubmit="handleCreateAnnouncement(event)">
             <div class="form-row">
               <div class="form-group flex-1">
-                <label>Tháng (Mẫu: Th.11, Th.12):</label>
+                <label>Tháng (Ví dụ: Th.11, Th.12):</label>
                 <input type="text" id="annMonth" required value="Th.11">
               </div>
               <div class="form-group flex-1">
-                <label>Ngày (Mẫu: 19, 20):</label>
+                <label>Ngày (Ví dụ: 19, 20):</label>
                 <input type="text" id="annDay" required value="20">
               </div>
             </div>
             <div class="form-group">
               <label>Tiêu đề thông báo (*):</label>
-              <input type="text" id="annTitle" required placeholder="Nhập tiêu đề thông báo hoạt động...">
+              <input type="text" id="annTitle" required placeholder="Nhập nội dung thông báo...">
             </div>
-            <button type="submit" class="btn-primary">🔔 Xuất bản Thông báo</button>
+            <button type="submit" class="btn-primary">🔔 Xuất Bản Thông Báo</button>
           </form>
         </div>
 
@@ -267,7 +358,7 @@
             <div class="form-row">
               <div class="form-group flex-1">
                 <label>Số hiệu văn bản (*):</label>
-                <input type="text" id="docNumber" required placeholder="Mẫu: 125/HD-SGDĐT">
+                <input type="text" id="docNumber" required placeholder="Ví dụ: 232/2026/NĐ-CP">
               </div>
               <div class="form-group flex-1">
                 <label>Thể loại:</label>
@@ -276,13 +367,104 @@
             </div>
             <div class="form-group">
               <label>Trích yếu văn bản (*):</label>
-              <input type="text" id="docTitle" required placeholder="Tên nội dung văn bản chỉ đạo...">
+              <input type="text" id="docTitle" required placeholder="Tên văn bản chỉ đạo...">
             </div>
-            <button type="submit" class="btn-primary">📑 Công bố Văn bản</button>
+            <button type="submit" class="btn-primary">📑 Công Bố Văn Bản</button>
           </form>
         </div>
 
-        <!-- TAB 4: AUDIT LOGS -->
+        <!-- TAB 4: DANH SÁCH DUYỆT TÀI KHOẢN ĐĂNG KÝ (ADMIN ONLY) -->
+        <div class="tab-content" id="pendingUsersTab">
+          <h3>Danh Sách Yêu Cầu Đăng Ký Tài Khoản Chờ Phê Duyệt</h3>
+          <div class="table-responsive">
+            <table class="audit-table">
+              <thead>
+                <tr>
+                  <th>#ID</th>
+                  <th>Họ và Tên</th>
+                  <th>Tên tài khoản</th>
+                  <th>Email</th>
+                  <th>Vai trò đề xuất</th>
+                  <th>Ngày đăng ký</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="pendingUsersBody">
+                <!-- Javascript render -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 5: CẤU HÌNH TRANG BÌA & LIÊN KẾT NHANH (ADMIN ONLY) -->
+        <div class="tab-content" id="coverSettingsTab">
+          <h3>Chỉnh Sửa Nội Dung Trang Bìa, Khối Chủ Quản & Liên Kết Nhanh</h3>
+          <form onsubmit="handleUpdateSiteSettings(event)">
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label>Tên Cơ quan Chủ quản:</label>
+                <input type="text" id="cfgAgencyTitle" required>
+              </div>
+              <div class="form-group flex-1">
+                <label>Tên Trường Học:</label>
+                <input type="text" id="cfgSchoolName" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label>Địa chỉ liên hệ:</label>
+                <input type="text" id="cfgAddress" required>
+              </div>
+              <div class="form-group flex-1">
+                <label>Số điện thoại:</label>
+                <input type="text" id="cfgPhone" required>
+              </div>
+              <div class="form-group flex-1">
+                <label>Email chính thức:</label>
+                <input type="email" id="cfgEmail" required>
+              </div>
+            </div>
+
+            <h4 style="margin: 15px 0 10px; color:#0d47a1;">Danh sách Đường Liên Kết Nhanh (Footer Quick Links)</h4>
+            <div id="quickLinksEditor">
+              <!-- Editor render từ Javascript -->
+            </div>
+            <button type="button" class="btn-secondary" onclick="addQuickLinkRow()" style="margin-bottom:15px; padding:6px 12px; font-size:12px;">+ Thêm dòng liên kết</button>
+            <br>
+            <button type="submit" class="btn-primary">💾 Lưu Cấu Hình Trang Bìa & Liên Kết Nhanh</button>
+          </form>
+        </div>
+
+        <!-- TAB 6: ĐỔI MẬT KHẨU TÀI KHOẢN -->
+        <div class="tab-content" id="changePasswordTab">
+          <h3>Đổi Mật Khẩu Cho Tài Khoản Đang Đăng Nhập</h3>
+          <form onsubmit="handleChangePassword(event)" style="max-width: 480px;">
+            <div class="form-group password-group">
+              <label>Mật khẩu hiện tại (*):</label>
+              <div class="password-wrapper">
+                <input type="password" id="pwdOld" required placeholder="Nhập mật khẩu cũ...">
+                <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility('pwdOld', this)">👁️</button>
+              </div>
+            </div>
+            <div class="form-group password-group">
+              <label>Mật khẩu mới (*):</label>
+              <div class="password-wrapper">
+                <input type="password" id="pwdNew" required placeholder="Nhập mật khẩu mới...">
+                <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility('pwdNew', this)">👁️</button>
+              </div>
+            </div>
+            <div class="form-group password-group">
+              <label>Xác nhận mật khẩu mới (*):</label>
+              <div class="password-wrapper">
+                <input type="password" id="pwdConfirm" required placeholder="Nhập lại mật khẩu mới...">
+                <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility('pwdConfirm', this)">👁️</button>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary">🔒 Cập Nhật Mật Khẩu Mới</button>
+          </form>
+        </div>
+
+        <!-- TAB 7: AUDIT LOGS -->
         <div class="tab-content" id="auditTab">
           <h3>Nhật Ký Hệ Thống & Vết Xuất Bản (Audit Logs)</h3>
           <div class="table-responsive">
