@@ -12,7 +12,9 @@ exports.login = (req, res) => {
   }
 
   const user = db.users.find(u => u.username === username);
-  if (!user || user.password_hash !== password) {
+  const isPasswordValid = user && (user.password === password || user.password_hash === password);
+
+  if (!user || !isPasswordValid) {
     return res.status(401).json({ success: false, message: 'Tên đăng nhập hoặc mật khẩu không chính xác!' });
   }
 
@@ -70,6 +72,7 @@ exports.register = (req, res) => {
   const newUser = {
     id: db.users.length + 1,
     username,
+    password: password,
     password_hash: password,
     full_name,
     email: email || '',
@@ -103,10 +106,12 @@ exports.changePassword = (req, res) => {
     return res.status(404).json({ success: false, message: 'Không tìm thấy người dùng!' });
   }
 
-  if (user.password_hash !== old_password) {
+  const currentPass = user.password || user.password_hash;
+  if (currentPass !== old_password) {
     return res.status(400).json({ success: false, message: 'Mật khẩu hiện tại không đúng!' });
   }
 
+  user.password = new_password;
   user.password_hash = new_password;
   saveData();
 

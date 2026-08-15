@@ -29,10 +29,16 @@ function togglePasswordVisibility(inputId, btnEl) {
 
   if (input.type === 'password') {
     input.type = 'text';
-    if (btnEl) btnEl.innerText = '🙈';
+    if (btnEl) {
+      btnEl.innerHTML = '🙈 <span style="font-size:10px; font-weight:bold; margin-left:2px;">Ẩn</span>';
+      btnEl.title = 'Ẩn mật khẩu';
+    }
   } else {
     input.type = 'password';
-    if (btnEl) btnEl.innerText = '👁️';
+    if (btnEl) {
+      btnEl.innerHTML = '👁️ <span style="font-size:10px; font-weight:bold; margin-left:2px;">Hiện</span>';
+      btnEl.title = 'Hiển thị mật khẩu';
+    }
   }
 }
 
@@ -339,6 +345,11 @@ async function handleChangePassword(e) {
   const old_password = document.getElementById('pwdOld').value;
   const new_password = document.getElementById('pwdNew').value;
   const confirm_password = document.getElementById('pwdConfirm').value;
+
+  if (!old_password || !new_password) {
+    alert('Vui lòng nhập đầy đủ mật khẩu cũ và mật khẩu mới!');
+    return;
+  }
 
   if (new_password !== confirm_password) {
     alert('Mật khẩu mới và Xác nhận mật khẩu mới không trùng khớp!');
